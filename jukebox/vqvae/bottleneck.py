@@ -146,7 +146,7 @@ class BottleneckBlock(nn.Module):
         x_d = x_d.view(N, T, width).permute(0, 2, 1).contiguous()
         return x_d
 
-    def forward(self, x, update_k=True):
+    def forward(self, x, update_k=False):
         N, width, T = x.shape
 
         # Preprocess
