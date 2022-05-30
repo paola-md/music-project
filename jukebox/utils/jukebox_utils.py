@@ -65,6 +65,9 @@ def get_forward_calls_decoder(decoder, prefix=""):
         
         calls += calls_
         layer_names += layer_names_
+        
+    calls.append(decoder.out)
+    layer_names.append(prefix + "out")
     
     
     return calls, layer_names
