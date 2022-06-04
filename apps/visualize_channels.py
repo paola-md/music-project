@@ -63,7 +63,7 @@ encoder_model = chosen_model.encoders[available_encoders.index(encoder_type)]
 encoder_model.eval()
 
 model_layers = get_model_layers(encoder_model)
-hook = hook_model(encoder_model, None)
+hook, _ = hook_model(encoder_model, None)
 
 
 sample_rate = int(st.sidebar.text_input('Sample Rate', value='44100'))
@@ -151,7 +151,10 @@ else:
 
 channel_sample_rate = len(channel_activation) // num_seconds
 ax.plot(freqs, channel_activation, label='Channel Activation')
-ax.set_ylabel("Intensity")
+layer_idx = available_layers.index(chosen_layer)
+ax.set_title(f"Layer {layer_idx}, Channel {channel_idx}")
+
+ax.set_ylabel("Activation")
 ax.set_xlabel("Frequency")
 if log_frequency:
     ax.set_xscale('log')
