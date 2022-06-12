@@ -105,28 +105,6 @@ def split_model(model, split_layer_name, get_calls, sequential=True):
     
     return pre, post
 
-def slice_model(model, split_layer_names, get_calls, sequential=True):
-    calls, layer_names = get_calls(model)
-    slice_length = len(split_layer_names)
-    module_slices = []
-    module_indices = []
-    for layer_name in split_layer_names:
-        assert layer_name in layer_names
-        module_indices.append(layer_names.index(layer_name))
-    module_indices.sort()
-    prev_idx = 0
-    for i, module_index in enumerate(module_indices):
-        print('index: ', i, ' module_index: ', module_index)
-        call_slice = calls[prev_idx:module_index+1]
-        name_slice = layer_names[prev_idx:module_index+1]
-        module_slice = torch.nn.Sequential(OrderedDict([(n, l) for n, l in zip(name_slice, call_slice)]))
-        module_slices.append(module_slice)
-        prev_idx = module_index+1
-    call_slice = calls[prev_idx:]
-    name_slice = layer_names[prev_idx:]
-    module_slice = torch.nn.Sequential(OrderedDict([(n, l) for n, l in zip(name_slice, call_slice)]))
-    module_slices.append(module_slice)
-    return module_slices
 
 import torchvision
 from PIL import Image

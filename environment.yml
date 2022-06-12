@@ -159,4 +159,4 @@ dependencies:
   - zeromq=4.3.4=h2531618_0
   - zlib=1.2.11=h166bdaf_1014
   - zstd=1.5.2=ha95c52a_0
-#prefix: /home/besbinar/.conda/envs/com418
+prefix: /home/besbinar/.conda/envs/com418
