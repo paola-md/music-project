@@ -14,18 +14,14 @@ This repo is organized in the following way:
 │   ├── exp1
 │   ├── exp2
 │   └── exp3
-├── notebooks
-│   ├── 00_jukebox_visualize.ipynb
-│   ├── 01_transfer_codebook.ipynb
-│   ├── 02_transfer_
-│   └── exp3
-└── results
-    ├── exp1
-    ├── exp2
-    └── exp3
+└──notebooks
+
+
 ```
 
 ### Instructions to understand the project
 1. Read the report report_music_style_transfer.pdf
 2. Read and see the notebooks (in order)
-3. Try to replicate the analysis and improve on top of our results. We have added the raw files in the data folder per experiments and our results as well. 
+3. Replicate our analysis. We have added the raw files in the data folder per experiments.
+
+The results are available [here](https://drive.google.com/drive/folders/1QVr9ckQe0ZWqHEcA6_eZ9GeX2BGiMuj8?usp=sharing)
