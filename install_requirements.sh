@@ -6,7 +6,6 @@ pip3 install soundfile
 pip3 install fire
 sudo conda install -y mpi4py
 pip3 install kornia
-pip3 install torch_audiomentations
 pip3 install nussl
 pip3 install streamlit
 sudo conda install -c conda-forge ffmpeg -y
