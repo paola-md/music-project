@@ -9,18 +9,20 @@ This repo is organized in the following way:
 ```
 .
 ├── README.md
-├── report_music_style_transfer.pdf
+├── final_report.pdf
 ├── data 
 │   ├── exp1
 │   ├── exp2
 │   └── exp3
 └──notebooks
+└──apps
+
 
 
 ```
 
 ### Instructions to understand the project
-1. Read the report report_music_style_transfer.pdf
+1. Read the report final_report.pdf
 2. Read and see the notebooks (in order)
 3. Replicate our analysis. We have added the raw files in the data folder per experiments.
 
