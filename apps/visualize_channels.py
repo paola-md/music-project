@@ -185,16 +185,18 @@ st.pyplot(fig)
 
 print(channel_sample_rate, output_signal.sample_rate, output_signal.signal_duration)
 
-# byte_io = io.BytesIO()
+if st.sidebar.button("Listen to the channel activation"):
 
-# signal = nussl.AudioSignal(audio_data_array=channel_activation, sample_rate=channel_sample_rate)
-# signal.write_audio_to_file(byte_io)
-# st.audio(byte_io)
+    byte_io = io.BytesIO()
 
-# sub = 'PCM_32'  # could be 'PCM_32' or 'FLOAT'
-# soundfile.write(byte_io, channel_activation, channel_sample_rate, subtype=sub, format='WAV')
+    signal = nussl.AudioSignal(audio_data_array=channel_activation, sample_rate=channel_sample_rate)
+    signal.write_audio_to_file(byte_io)
+    st.audio(byte_io)
+
+    sub = 'PCM_32'  # could be 'PCM_32' or 'FLOAT'
+    soundfile.write(byte_io, channel_activation, channel_sample_rate, subtype=sub, format='WAV')
 
 
-# st.audio(channel_activation, format='audio/wave')
+    st.audio(channel_activation, format='audio/wave')
 
     
